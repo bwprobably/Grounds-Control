@@ -56,10 +56,13 @@ class SettingsAndCredits: UIViewController {
 
 
 
-
+//MARK: Fix user defaults to save to coredata
     @IBAction func DarkModeSwitch(_ sender: UISwitch) {
         if #available(iOS 13.0, *) {
-             let appDelegate = UIApplication.shared.windows.first
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            let window = windowScene?.windows.first
+             let appDelegate = window
                  if sender.isOn {
                     appDelegate?.overrideUserInterfaceStyle = .dark
                       return
