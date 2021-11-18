@@ -38,7 +38,7 @@ extension Coffee {
     @NSManaged public var underripe: Float
     @NSManaged public var underroast: Float
     @NSManaged public var veggie: Float
-    @NSManaged public var otherNotes: String?
+    @NSManaged public var otherNotes: String!
 
 }
 

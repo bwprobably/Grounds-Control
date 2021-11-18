@@ -58,10 +58,13 @@ class CoffeeListViewController: UIViewController {
     private func goToStats(_ drink: Coffee){
         let controller = storyboard?.instantiateViewController(withIdentifier: CoffeeStatsView.identifier) as! CoffeeStatsView
         navigationController?.pushViewController(controller, animated: true)
+        controller.items = drink
     }
     
     private func goToEditNote(_ drink: Coffee) {
         let controller = storyboard?.instantiateViewController(identifier: EditCoffeeController.identifier) as! EditCoffeeController
+        
+        controller.drink = drink
         
         navigationController?.pushViewController(controller, animated: true)
     }

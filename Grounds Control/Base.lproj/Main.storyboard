@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9jD-sy-6y8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9jD-sy-6y8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -59,9 +59,25 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QJv-Dm-G7A">
+                                                <rect key="frame" x="310" y="109" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="DarkModeSwitch:" destination="XcB-lh-CQB" eventType="valueChanged" id="Wr5-Kr-Ido"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUf-46-ofd">
+                                                <rect key="frame" x="34" y="114" width="83.5" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="OBH-CM-Add"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="OUf-46-ofd" firstAttribute="centerY" secondItem="QJv-Dm-G7A" secondAttribute="centerY" id="1Dm-eR-lKd"/>
                                             <constraint firstAttribute="height" constant="1000" id="3Og-FQ-cPD"/>
                                             <constraint firstItem="4I5-uC-qrQ" firstAttribute="centerX" secondItem="czl-FF-hEZ" secondAttribute="centerX" id="6wl-tq-6e6"/>
                                             <constraint firstItem="7r7-gh-Thp" firstAttribute="top" secondItem="3UV-IU-qPg" secondAttribute="bottom" constant="17" id="6yk-Fs-scJ"/>
@@ -70,7 +86,11 @@
                                             <constraint firstItem="7r7-gh-Thp" firstAttribute="centerX" secondItem="czl-FF-hEZ" secondAttribute="centerX" id="FnF-dh-lZr"/>
                                             <constraint firstItem="4I5-uC-qrQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="czl-FF-hEZ" secondAttribute="leading" constant="170" id="L88-UW-8LU"/>
                                             <constraint firstItem="4I5-uC-qrQ" firstAttribute="top" secondItem="7r7-gh-Thp" secondAttribute="bottom" constant="50" id="Pwm-6e-Ygk"/>
+                                            <constraint firstItem="QJv-Dm-G7A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OUf-46-ofd" secondAttribute="trailing" constant="8" symbolic="YES" id="Sdh-Rd-pL2"/>
                                             <constraint firstItem="3UV-IU-qPg" firstAttribute="centerX" secondItem="czl-FF-hEZ" secondAttribute="centerX" id="Sk0-z5-nXM"/>
+                                            <constraint firstItem="OUf-46-ofd" firstAttribute="leading" secondItem="czl-FF-hEZ" secondAttribute="leading" constant="34" id="ews-zK-HGV"/>
+                                            <constraint firstAttribute="trailing" secondItem="QJv-Dm-G7A" secondAttribute="trailing" constant="55" id="huA-hm-Rw4"/>
+                                            <constraint firstItem="3UV-IU-qPg" firstAttribute="top" secondItem="QJv-Dm-G7A" secondAttribute="bottom" constant="109" id="xx0-Ja-YrW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -89,6 +109,7 @@
                         <constraints>
                             <constraint firstItem="uAe-bF-5oz" firstAttribute="top" secondItem="qgc-sO-O4s" secondAttribute="top" constant="44" id="Dqa-TQ-OYM"/>
                             <constraint firstItem="uAe-bF-5oz" firstAttribute="leading" secondItem="qgc-sO-O4s" secondAttribute="leading" id="EU6-Eb-yJP"/>
+                            <constraint firstItem="QJv-Dm-G7A" firstAttribute="top" secondItem="E2h-eC-USe" secondAttribute="top" constant="109" id="Ln5-Yx-jit"/>
                             <constraint firstAttribute="trailing" secondItem="uAe-bF-5oz" secondAttribute="trailing" id="TwC-zt-zZg"/>
                             <constraint firstItem="czl-FF-hEZ" firstAttribute="width" secondItem="qgc-sO-O4s" secondAttribute="width" id="YuI-JX-D7M"/>
                             <constraint firstAttribute="bottom" secondItem="uAe-bF-5oz" secondAttribute="bottom" constant="-44" id="ywK-Zd-r8W"/>
@@ -119,30 +140,31 @@
                             <tableViewSection headerTitle="Name, Date &amp; Rating" id="wpV-IG-B8O">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4y4-0g-rlz">
-                                        <rect key="frame" x="20" y="49.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="34.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4y4-0g-rlz" id="5sZ-FD-t6f">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-Cb-4MJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <color key="textColor" systemColor="labelColor"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5V-Ag-GwJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="BX4-5x-BdM" id="IGo-Kx-IYP"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="FgM-Cb-4MJ" firstAttribute="top" secondItem="5sZ-FD-t6f" secondAttribute="top" id="6Hr-4H-jtD"/>
-                                                <constraint firstAttribute="bottom" secondItem="FgM-Cb-4MJ" secondAttribute="bottom" id="8uh-LR-0U0"/>
-                                                <constraint firstAttribute="trailing" secondItem="FgM-Cb-4MJ" secondAttribute="trailing" id="cJd-pa-FdJ"/>
-                                                <constraint firstItem="FgM-Cb-4MJ" firstAttribute="leading" secondItem="5sZ-FD-t6f" secondAttribute="leading" id="n8c-94-NLf"/>
+                                                <constraint firstAttribute="trailing" secondItem="i5V-Ag-GwJ" secondAttribute="trailing" id="Ndq-qT-G9G"/>
+                                                <constraint firstAttribute="bottom" secondItem="i5V-Ag-GwJ" secondAttribute="bottom" id="rVm-AP-wcy"/>
+                                                <constraint firstItem="i5V-Ag-GwJ" firstAttribute="top" secondItem="5sZ-FD-t6f" secondAttribute="top" id="vsO-4y-dvk"/>
+                                                <constraint firstItem="i5V-Ag-GwJ" firstAttribute="leading" secondItem="5sZ-FD-t6f" secondAttribute="leading" id="ynY-N8-GFY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="igJ-K0-1ag">
-                                        <rect key="frame" x="20" y="93" width="374" height="31.5"/>
+                                        <rect key="frame" x="20" y="84" width="374" height="31.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="igJ-K0-1ag" id="Mph-yQ-QNA">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="31.5"/>
@@ -164,19 +186,22 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="f5Q-ps-MgB">
-                                        <rect key="frame" x="20" y="124.5" width="374" height="31.5"/>
+                                        <rect key="frame" x="20" y="115.5" width="374" height="31.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f5Q-ps-MgB" id="oGC-6q-Md5">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="31.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vzB-DC-aS1">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="vzB-DC-aS1">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
                                                     <segments>
                                                         <segment title="Garbage"/>
                                                         <segment title="Just &quot;Ok&quot;"/>
                                                         <segment title="Outstanding"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="didChangeGrade:" destination="BX4-5x-BdM" eventType="valueChanged" id="zot-rS-L3D"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -192,7 +217,7 @@
                             <tableViewSection headerTitle="Positive Notes" id="jSe-Oq-ln6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="Qto-ou-5iw">
-                                        <rect key="frame" x="20" y="206" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="197" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qto-ou-5iw" id="4bE-5S-xo6">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -209,6 +234,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="kTR-Ds-VHF">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="choco_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="txz-ij-JFZ"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -223,7 +251,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="yjV-el-YdV">
-                                        <rect key="frame" x="20" y="276" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="267" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yjV-el-YdV" id="wGZ-rz-Mqh">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -240,6 +268,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fqg-MM-bWz">
                                                     <rect key="frame" x="3" y="35" width="368" height="31"/>
+                                                    <connections>
+                                                        <action selector="floral_slider:" destination="BX4-5x-BdM" eventType="valueChanged" id="8XD-HV-TfK"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -254,7 +285,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="UmW-h9-8Qs">
-                                        <rect key="frame" x="20" y="346" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="337" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UmW-h9-8Qs" id="cgg-u8-jDR">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -262,6 +293,9 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="a6v-N3-LvV">
                                                     <rect key="frame" x="3" y="29" width="368" height="31"/>
+                                                    <connections>
+                                                        <action selector="fruty_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="71O-6z-fuK"/>
+                                                    </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fruity notes (1-5):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ug-8s-UdR">
                                                     <rect key="frame" x="5" y="4.5" width="221" height="20.5"/>
@@ -286,7 +320,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="TQ9-f9-3JB">
-                                        <rect key="frame" x="20" y="416" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="407" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TQ9-f9-3JB" id="7QQ-jl-oM6">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -303,6 +337,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="PLb-Sp-Pff">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="nutty_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="gCY-yQ-I9e"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -317,7 +354,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="74H-rh-P0G">
-                                        <rect key="frame" x="20" y="486" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="477" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="74H-rh-P0G" id="OTH-bb-2NY">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -334,6 +371,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="OUq-VR-QMU">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="roasted_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="Vmj-HC-JIH"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -348,7 +388,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="tzS-vl-Qhu">
-                                        <rect key="frame" x="20" y="556" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="547" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tzS-vl-Qhu" id="yN1-SF-6Lm">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -365,6 +405,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="AQp-8C-cz0">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="spice_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="hnM-Pt-Ubs"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -379,7 +422,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="wIY-Ye-I48">
-                                        <rect key="frame" x="20" y="626" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="617" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wIY-Ye-I48" id="VrA-pw-Kmk">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -396,6 +439,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="e5i-9L-18Y">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="sweet_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="26J-ml-a6h"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -410,7 +456,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="SC0-JR-t9p">
-                                        <rect key="frame" x="20" y="696" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="687" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SC0-JR-t9p" id="0EA-Kk-OSH">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -427,6 +473,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="iuU-BN-diN">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="veggie_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="UNV-5d-3Oo"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -441,7 +490,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="lj7-Nl-47X">
-                                        <rect key="frame" x="20" y="766" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="757" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lj7-Nl-47X" id="Lia-tA-h7P">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -458,6 +507,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="NSB-NZ-gPF">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="other_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="4Ak-Xe-AIE"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -476,7 +528,7 @@
                             <tableViewSection headerTitle="Negative Notes" id="Voo-fs-I3S">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="Ngm-35-NBA">
-                                        <rect key="frame" x="20" y="886" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="877" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ngm-35-NBA" id="0rW-Fj-scm">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -493,6 +545,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pk2-T5-gjg">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="aged_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="Ggz-cM-0My"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -507,7 +562,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="vb7-n0-Hah">
-                                        <rect key="frame" x="20" y="956" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="947" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vb7-n0-Hah" id="O5r-ak-mOE">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -524,6 +579,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="mnF-Ca-32P">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="decomp_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="1Ns-dW-OOc"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -538,7 +596,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="uwT-BS-t62">
-                                        <rect key="frame" x="20" y="1026" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="1017" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uwT-BS-t62" id="eED-Q7-sr8">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -555,6 +613,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="nx0-vp-2vJ">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="mold_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="n6u-mQ-rNf"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -569,7 +630,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="VDE-Bg-Cyd">
-                                        <rect key="frame" x="20" y="1096" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="1087" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VDE-Bg-Cyd" id="n1T-g4-oxI">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -586,6 +647,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rha-c7-htH">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="muchRoast_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="3wj-om-KDG"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -600,7 +664,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="DrQ-7G-8fy">
-                                        <rect key="frame" x="20" y="1166" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="1157" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DrQ-7G-8fy" id="XcV-vi-ibh">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -617,6 +681,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="aDf-uy-nxH">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="tainted_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="VHd-k7-9eg"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -631,7 +698,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="5w4-f5-b2D">
-                                        <rect key="frame" x="20" y="1236" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="1227" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5w4-f5-b2D" id="hrn-fM-3fk">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -648,6 +715,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Dh-gA-ojr">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="underripe_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="Y44-21-9z9"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -662,7 +732,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="vSQ-f0-JY8">
-                                        <rect key="frame" x="20" y="1306" width="374" height="70"/>
+                                        <rect key="frame" x="20" y="1297" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vSQ-f0-JY8" id="ljZ-Rt-sdy">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -679,6 +749,9 @@
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="gHi-Fg-81R">
                                                     <rect key="frame" x="3" y="28.5" width="368" height="31.5"/>
+                                                    <connections>
+                                                        <action selector="underroast_slider_action:" destination="BX4-5x-BdM" eventType="valueChanged" id="Q97-b4-dO7"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -697,7 +770,7 @@
                             <tableViewSection headerTitle="other things to note:" id="2rl-x4-kXc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="300" id="3BS-ew-3Be">
-                                        <rect key="frame" x="20" y="1426" width="374" height="300"/>
+                                        <rect key="frame" x="20" y="1417" width="374" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3BS-ew-3Be" id="IEs-mB-dzo">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
@@ -713,6 +786,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="BX4-5x-BdM" id="Dbe-Qv-4m7"/>
+                                                            </connections>
                                                         </textView>
                                                     </subviews>
                                                     <constraints>
@@ -746,10 +822,41 @@
                     <size key="freeformSize" width="414" height="2066"/>
                     <connections>
                         <outlet property="Other_Notes" destination="jTi-ms-OHB" id="nqc-mj-GpC"/>
+                        <outlet property="aged_label_outlet" destination="DBn-57-Eyg" id="gfh-1U-Xq1"/>
+                        <outlet property="aged_slider_outlet" destination="Pk2-T5-gjg" id="s6K-8J-FLH"/>
+                        <outlet property="chocoLabel" destination="JQy-MH-otT" id="vfW-J6-nMb"/>
                         <outlet property="chocoSlider" destination="kTR-Ds-VHF" id="IGV-Vu-RFR"/>
-                        <outlet property="coffeeName" destination="FgM-Cb-4MJ" id="YUj-7V-RMO"/>
+                        <outlet property="coffeeName" destination="i5V-Ag-GwJ" id="RVi-CJ-jYg"/>
                         <outlet property="datePicker" destination="Vfh-ry-Ywc" id="lRw-Pa-DYX"/>
+                        <outlet property="decomp_label_outlet" destination="79u-Ir-Oaq" id="aGE-Cs-bJm"/>
+                        <outlet property="decomp_slider_outlet" destination="mnF-Ca-32P" id="Raj-Ez-PB0"/>
+                        <outlet property="floral_outlet" destination="Wdn-HF-jnv" id="NgT-sK-cJ3"/>
+                        <outlet property="floral_slider_outlet" destination="Fqg-MM-bWz" id="BaX-SY-2lk"/>
+                        <outlet property="fruity_slider_outlet" destination="a6v-N3-LvV" id="bLz-Yg-3pz"/>
+                        <outlet property="frutty_Label_Outlet" destination="7Ug-8s-UdR" id="62T-tO-KrT"/>
                         <outlet property="gradePicker" destination="vzB-DC-aS1" id="73F-L9-QdD"/>
+                        <outlet property="mold_label_outlet" destination="XGK-hq-jRo" id="yUZ-eE-weL"/>
+                        <outlet property="mold_slider_outlet" destination="nx0-vp-2vJ" id="i5u-iz-rhM"/>
+                        <outlet property="muchRoast_label_outlet" destination="DQC-2n-ybm" id="Bkg-ai-B3b"/>
+                        <outlet property="muchRoast_slider_outlet" destination="Rha-c7-htH" id="adt-xg-GWk"/>
+                        <outlet property="nutty_label_outlet" destination="QCH-7y-Vm3" id="79z-B4-RbL"/>
+                        <outlet property="nutty_slider_outlet" destination="PLb-Sp-Pff" id="aiZ-Cd-YBq"/>
+                        <outlet property="other_label_Outlet" destination="Hq1-d7-sB9" id="gZb-gK-rKt"/>
+                        <outlet property="other_slider_outlet" destination="NSB-NZ-gPF" id="EC9-gI-mKI"/>
+                        <outlet property="roasted_label_outlet" destination="19e-5W-zDB" id="6k6-iv-wic"/>
+                        <outlet property="roasted_slider_outlet" destination="OUq-VR-QMU" id="UZ0-ke-Vtg"/>
+                        <outlet property="spice_label_outlet" destination="wdz-0A-0UM" id="eHp-4F-8Ch"/>
+                        <outlet property="spice_slider_outlet" destination="AQp-8C-cz0" id="obm-r2-OoJ"/>
+                        <outlet property="sweet_label_outlet" destination="AHt-4N-KRg" id="DRP-7E-hWz"/>
+                        <outlet property="sweet_slider_outlet" destination="e5i-9L-18Y" id="HVp-vU-gDW"/>
+                        <outlet property="tainted_label_outlet" destination="JcK-2m-dog" id="GzO-51-xjN"/>
+                        <outlet property="tainted_slider_outlet" destination="aDf-uy-nxH" id="iEI-qb-EvM"/>
+                        <outlet property="underripe_label_outlet" destination="7oC-5w-IhM" id="2xs-9c-XgD"/>
+                        <outlet property="underripe_slider_outlet" destination="2Dh-gA-ojr" id="WF1-Co-SsN"/>
+                        <outlet property="underroast_label_outlet" destination="zUR-aq-IVi" id="c5T-Su-Oyo"/>
+                        <outlet property="underroast_slider_outlet" destination="gHi-Fg-81R" id="HZg-cJ-itY"/>
+                        <outlet property="veggie_label_outlet" destination="9We-J7-KdB" id="9Jc-Js-iFs"/>
+                        <outlet property="veggie_slider_outlet" destination="iuU-BN-diN" id="n6F-QZ-fHx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Je-b7-g8e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -771,7 +878,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1009"/>
                                         <subviews>
                                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDW-Pv-LbV" customClass="RadarChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="71" width="414" height="376"/>
+                                                <rect key="frame" x="0.0" y="71" width="414" height="390"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <gestureRecognizers/>
                                             </view>
@@ -788,17 +895,24 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLB-9l-DKX" userLabel="Negative_Chart" customClass="RadarChartView" customModule="Charts">
-                                                <rect key="frame" x="0.0" y="511.5" width="414" height="351.5"/>
+                                                <rect key="frame" x="0.0" y="511.5" width="414" height="390.5"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ0-sx-DHW">
+                                                <rect key="frame" x="329" y="28" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="xDW-Pv-LbV" firstAttribute="top" secondItem="yj0-Km-IEL" secondAttribute="top" constant="71" id="0qO-hZ-SCq"/>
                                             <constraint firstAttribute="height" constant="1009" id="44P-Zt-yUK"/>
-                                            <constraint firstAttribute="bottom" secondItem="xDW-Pv-LbV" secondAttribute="bottom" constant="562" id="5Gs-FW-TuD"/>
+                                            <constraint firstAttribute="bottom" secondItem="xDW-Pv-LbV" secondAttribute="bottom" constant="548" id="5Gs-FW-TuD"/>
                                             <constraint firstItem="VLB-9l-DKX" firstAttribute="trailing" secondItem="xDW-Pv-LbV" secondAttribute="trailing" id="EgG-eb-CPn"/>
-                                            <constraint firstAttribute="bottom" secondItem="VLB-9l-DKX" secondAttribute="bottom" constant="146" id="N1l-dX-UXr"/>
+                                            <constraint firstAttribute="bottom" secondItem="VLB-9l-DKX" secondAttribute="bottom" constant="107" id="N1l-dX-UXr"/>
                                             <constraint firstItem="m3X-n3-1qh" firstAttribute="leading" secondItem="sie-Ao-pS8" secondAttribute="leading" id="TXV-dW-xXX"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sie-Ao-pS8" secondAttribute="trailing" constant="20" symbolic="YES" id="cYH-qK-Yl1"/>
                                             <constraint firstItem="xDW-Pv-LbV" firstAttribute="top" secondItem="sie-Ao-pS8" secondAttribute="bottom" constant="22" id="eAX-0g-Tso"/>
@@ -806,7 +920,7 @@
                                             <constraint firstItem="sie-Ao-pS8" firstAttribute="leading" secondItem="yj0-Km-IEL" secondAttribute="leadingMargin" id="gsm-3r-F9F"/>
                                             <constraint firstItem="VLB-9l-DKX" firstAttribute="top" secondItem="m3X-n3-1qh" secondAttribute="bottom" constant="22" id="jyM-VP-hyS"/>
                                             <constraint firstItem="xDW-Pv-LbV" firstAttribute="centerX" secondItem="yj0-Km-IEL" secondAttribute="centerX" id="p1Q-Si-rP8"/>
-                                            <constraint firstItem="m3X-n3-1qh" firstAttribute="top" secondItem="xDW-Pv-LbV" secondAttribute="bottom" constant="22" id="rrW-Yz-XWu"/>
+                                            <constraint firstItem="m3X-n3-1qh" firstAttribute="top" secondItem="xDW-Pv-LbV" secondAttribute="bottom" constant="8" id="rrW-Yz-XWu"/>
                                             <constraint firstAttribute="trailing" secondItem="xDW-Pv-LbV" secondAttribute="trailing" id="xe5-B3-uqW"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m3X-n3-1qh" secondAttribute="trailing" constant="20" symbolic="YES" id="y3K-9d-wyf"/>
                                         </constraints>
@@ -822,18 +936,6 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="E3e-QQ-xvh"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="jGQ-uh-ru5"/>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0L1-e0-sT3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Coffee Statistics" id="69g-ra-iTO">
-                                        <barButtonItem key="leftBarButtonItem" title="Log" image="arrowshape.turn.up.backward.fill" catalog="system" id="yFG-Gp-RGu"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MyF-Or-ulg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -847,7 +949,8 @@
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="negative_Chart" destination="VLB-9l-DKX" id="nCg-ux-p0Q"/>
-                        <outlet property="radarChart" destination="xDW-Pv-LbV" id="YIC-x2-bLZ"/>
+                        <outlet property="numberLabel" destination="RJ0-sx-DHW" id="cGy-Ii-yWa"/>
+                        <outlet property="positive_Chart" destination="xDW-Pv-LbV" id="YIC-x2-bLZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4h-wY-unb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -948,9 +1051,6 @@
                                     <outlet property="delegate" destination="L0L-Aw-Z6C" id="xO2-ej-Y9S"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gv-Cu-dUB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                            </navigationBar>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" id="sQa-yh-3Bk">
                                 <rect key="frame" x="0.0" y="780" width="414" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -983,11 +1083,8 @@
                         <constraints>
                             <constraint firstItem="lg1-jo-nzL" firstAttribute="leading" secondItem="HmH-yB-h0S" secondAttribute="leading" id="HEc-fk-mTk"/>
                             <constraint firstItem="lg1-jo-nzL" firstAttribute="top" secondItem="HmH-yB-h0S" secondAttribute="top" id="Iy5-Aa-PBf"/>
-                            <constraint firstItem="3gv-Cu-dUB" firstAttribute="leading" secondItem="sQa-yh-3Bk" secondAttribute="leading" id="fEK-Pt-If9"/>
                             <constraint firstItem="HmH-yB-h0S" firstAttribute="trailing" secondItem="lg1-jo-nzL" secondAttribute="trailing" id="hsx-ZP-eQU"/>
-                            <constraint firstItem="3gv-Cu-dUB" firstAttribute="trailing" secondItem="sQa-yh-3Bk" secondAttribute="trailing" id="j1E-GA-M8e"/>
                             <constraint firstAttribute="bottomMargin" secondItem="lg1-jo-nzL" secondAttribute="bottom" constant="-83" id="npj-XG-SQL"/>
-                            <constraint firstItem="3gv-Cu-dUB" firstAttribute="top" secondItem="HmH-yB-h0S" secondAttribute="top" id="qCw-Zh-7XH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Coffee List" id="Ai4-Oh-kZh">
@@ -1160,7 +1257,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="cup.and.saucer.fill" catalog="system" width="128" height="91"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="number.circle" catalog="system" width="128" height="121"/>

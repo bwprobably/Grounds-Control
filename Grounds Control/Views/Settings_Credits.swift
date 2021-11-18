@@ -55,24 +55,18 @@ class SettingsAndCredits: UIViewController {
     
 
 
-    
-//    @IBOutlet weak var darkModeSwitch: UISwitch!
-//
-//
-//
-//    @IBAction func all_dark(_ sender: UISwitch) {
-//        //darkModeSwitch.isOn = overrideUserInterfaceStyle == .dark
-//        if #available(iOS 13.0, *) {
-//             let appDelegate = UIApplication.shared.windows.first
-//                 if sender.isOn {
-//                    appDelegate?.overrideUserInterfaceStyle = .dark
-//                      return
-//                 }
-//             appDelegate?.overrideUserInterfaceStyle = .light
-//             return
-//        }
-//    }
-    
+
+
+    @IBAction func DarkModeSwitch(_ sender: UISwitch) {
+        if #available(iOS 13.0, *) {
+             let appDelegate = UIApplication.shared.windows.first
+                 if sender.isOn {
+                    appDelegate?.overrideUserInterfaceStyle = .dark
+                      return
+                 }
+             appDelegate?.overrideUserInterfaceStyle = .light
+    }
+    }
     
 
     @IBOutlet weak var Credits_Outlet: UITextView!
