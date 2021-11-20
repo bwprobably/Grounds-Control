@@ -104,10 +104,30 @@ class CalculatorViewController: UIViewController, UIPickerViewDelegate, UIPicker
         //let finalOutput : String = "Toddy Test"
         OutputLabel.text = finalOutput
     }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+
+        
+        
+        let dModeEngage = defaults.bool(forKey: "darkModeOn")
+        if dModeEngage {
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            let window = windowScene?.windows.first
+             let appDelegate = window
+                 if dModeEngage {
+                    appDelegate?.overrideUserInterfaceStyle = .dark
+                 } else{
+                     appDelegate?.overrideUserInterfaceStyle = .light
+                 }
+        }
+
+        
+        
         // Do any additional setup after loading the view.
         MethodPicker.dataSource = self
         MethodPicker.delegate = self
@@ -172,8 +192,7 @@ class CalculatorViewController: UIViewController, UIPickerViewDelegate, UIPicker
             break
         }
     }
-    
-  
-   
+
 }
+
 

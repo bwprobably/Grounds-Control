@@ -54,21 +54,13 @@ extension NSMutableAttributedString {
 class SettingsAndCredits: UIViewController {
     
 
-
+    @IBOutlet weak var dModeView: UISwitch!
+    
 
 //MARK: Fix user defaults to save to coredata
     @IBAction func DarkModeSwitch(_ sender: UISwitch) {
-        if #available(iOS 13.0, *) {
-            let scenes = UIApplication.shared.connectedScenes
-            let windowScene = scenes.first as? UIWindowScene
-            let window = windowScene?.windows.first
-             let appDelegate = window
-                 if sender.isOn {
-                    appDelegate?.overrideUserInterfaceStyle = .dark
-                      return
-                 }
-             appDelegate?.overrideUserInterfaceStyle = .light
-    }
+        updateDarkMode(isOn: sender.isOn)
+        UserDefaults.standard.setValue(sender.isOn, forKey: "darkModeOn")
     }
     
 
@@ -79,7 +71,8 @@ class SettingsAndCredits: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let dMode = UserDefaults.standard.bool(forKey: "darkModeOn")
+        updateDarkMode(isOn: dMode)
         
         let creditText = """
 Hello! Thanks for downloading and using my app. This took me by far way to long to make.
@@ -107,9 +100,13 @@ Thanks: Brett Wolf
             """
         
         let attributedbyMeText = NSMutableAttributedString.getAttributedString(fromString: salutation)
-        attributedbyMeText.apply(color: .darkGray, subString: "PLDS Inc.")
+        attributedbyMeText.apply(color: .secondaryLabel, subString: salutation)
         attributedbyMeText.applylink(value: "https://youtu.be/tneigbeGhjQ", onRange: "Seattle, WA")
-        attributedbyMeText.apply(color: .darkGray, subString: "created in sunny and hot ")
+        
+        let formattedCreditText = NSMutableAttributedString.getAttributedString(fromString: creditText)
+        formattedCreditText.applylink(value: "https://github.com/danielgindi/Charts", onRange: "Charts for iOS")
+        formattedCreditText.apply(color: .label, subString: creditText)
+        
         
         
        
@@ -117,14 +114,27 @@ Thanks: Brett Wolf
         self.Credits_By_Outlet.textAlignment = .center
         
         
-        self.Credits_Outlet.text = creditText
+        self.Credits_Outlet.attributedText = formattedCreditText
         
-        // Do any additional setup after loading the view.
         
        
     }
     
    
+    func updateDarkMode(isOn: Bool){
+        if #available(iOS 13.0, *) {
+            let scenes = UIApplication.shared.connectedScenes
+            let windowScene = scenes.first as? UIWindowScene
+            let window = windowScene?.windows.first
+             let appDelegate = window
+                 if isOn {
+                    appDelegate?.overrideUserInterfaceStyle = .dark
+                    dModeView.isOn = isOn
+                      return
+                 }
+             appDelegate?.overrideUserInterfaceStyle = .light
+    }
+        
+    }
     
-
 }
