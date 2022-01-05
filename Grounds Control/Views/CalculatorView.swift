@@ -20,6 +20,7 @@ class CalculatorViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     
     
+    
     let pickerChoices = ["Japanese Iced Coffee", "Pour Over", "Toddy Cold Brew", "Filtron Cold Brew", "Moka Pot", "French Press", "Aeropress"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -109,10 +110,8 @@ class CalculatorViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Dark mode settings for subsequent views from Settings_Credits switch. I have no clue how I got it to work
         let defaults = UserDefaults.standard
-
-        
-        
         let dModeEngage = defaults.bool(forKey: "darkModeOn")
         if dModeEngage {
             let scenes = UIApplication.shared.connectedScenes

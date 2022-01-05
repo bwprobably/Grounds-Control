@@ -15,6 +15,9 @@
 		8B4385F62716392D00A91C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4385F42716392D00A91C5D /* LaunchScreen.storyboard */; };
 		8B43860127163A8D00A91C5D /* coreDataMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B43860027163A8D00A91C5D /* coreDataMngr.swift */; };
 		8B4386072717E4A300A91C5D /* DateFormatExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4386062717E4A300A91C5D /* DateFormatExt.swift */; };
+		8B9FA9A52785193B004E86DA /* Coffee_Marker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FA9A027851879004E86DA /* Coffee_Marker.xib */; };
+		8B9FA9A62785193B004E86DA /* coffee_marker3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9FA9A22785189A004E86DA /* coffee_marker3x.png */; };
+		8BF17485274F0C4E004AC60A /* Coffee_Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF17484274F0C4E004AC60A /* Coffee_Marker.swift */; };
 		8BFC987D2721D86A004249A6 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC987C2721D86A004249A6 /* CalculatorView.swift */; };
 		8BFC987F2721DB5A004249A6 /* UITextViewAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC987E2721DB5A004249A6 /* UITextViewAdditions.swift */; };
 		8BFC98812721DFC6004249A6 /* Settings_Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC98802721DFC6004249A6 /* Settings_Credits.swift */; };
@@ -38,6 +41,9 @@
 		8B4385F72716392D00A91C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B43860027163A8D00A91C5D /* coreDataMngr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataMngr.swift; sourceTree = "<group>"; };
 		8B4386062717E4A300A91C5D /* DateFormatExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatExt.swift; sourceTree = "<group>"; };
+		8B9FA9A027851879004E86DA /* Coffee_Marker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Coffee_Marker.xib; sourceTree = "<group>"; };
+		8B9FA9A22785189A004E86DA /* coffee_marker3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_marker3x.png; sourceTree = "<group>"; };
+		8BF17484274F0C4E004AC60A /* Coffee_Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee_Marker.swift; sourceTree = "<group>"; };
 		8BFC987C2721D86A004249A6 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		8BFC987E2721DB5A004249A6 /* UITextViewAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewAdditions.swift; sourceTree = "<group>"; };
 		8BFC98802721DFC6004249A6 /* Settings_Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_Credits.swift; sourceTree = "<group>"; };
@@ -80,12 +86,14 @@
 		8B4385E52716392400A91C5D /* Grounds Control */ = {
 			isa = PBXGroup;
 			children = (
+				8B9FA9A027851879004E86DA /* Coffee_Marker.xib */,
 				8B4385E62716392400A91C5D /* AppDelegate.swift */,
 				8B4385E82716392400A91C5D /* SceneDelegate.swift */,
 				8B4385EC2716392400A91C5D /* Main.storyboard */,
 				8B4385F22716392D00A91C5D /* Assets.xcassets */,
 				8B4385F42716392D00A91C5D /* LaunchScreen.storyboard */,
 				8B4385F72716392D00A91C5D /* Info.plist */,
+				8B8C56B1274E029E0091643A /* Images */,
 				8B4385FF2716397A00A91C5D /* Models */,
 				8B4385FE2716396700A91C5D /* Extensions */,
 				8B4385FD2716394700A91C5D /* Views */,
@@ -96,6 +104,7 @@
 		8B4385FD2716394700A91C5D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BF17484274F0C4E004AC60A /* Coffee_Marker.swift */,
 				8BFC9895272334DA004249A6 /* EditCoffeeController.swift */,
 				8BFC98892721F386004249A6 /* CoffeeListViewController.swift */,
 				8BFC988F27221C54004249A6 /* CoffeeListTableViewCell.swift */,
@@ -124,6 +133,14 @@
 				8B4385EF2716392400A91C5D /* Grounds_Control.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8B8C56B1274E029E0091643A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8B9FA9A22785189A004E86DA /* coffee_marker3x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +207,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9FA9A52785193B004E86DA /* Coffee_Marker.xib in Resources */,
+				8B9FA9A62785193B004E86DA /* coffee_marker3x.png in Resources */,
 				8B4385F62716392D00A91C5D /* LaunchScreen.storyboard in Resources */,
 				8B4385F32716392D00A91C5D /* Assets.xcassets in Resources */,
 				8B4385EE2716392400A91C5D /* Main.storyboard in Resources */,
@@ -203,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF17485274F0C4E004AC60A /* Coffee_Marker.swift in Sources */,
 				8BFC988A2721F386004249A6 /* CoffeeListViewController.swift in Sources */,
 				8BFC98862721EF6C004249A6 /* CoffeeStatsController.swift in Sources */,
 				8BFC989027221C54004249A6 /* CoffeeListTableViewCell.swift in Sources */,
@@ -300,6 +320,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -354,6 +375,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

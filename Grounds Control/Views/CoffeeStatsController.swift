@@ -48,15 +48,18 @@ class YAxisFormatter: AxisValueFormatter {
 }
 
 
+
+
 class CoffeeStatsView: UIViewController ,ChartViewDelegate {
 
     static let identifier = "CoffeeStatsView"
     
+    let positivemarker = Coffee_Marker()
     
     //MARK: Added value selection -> make popup or icon to show value to user
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        numberLabel.text = String.init(format: "%d", Int(round(entry.y)))
-    }
+//    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+//       numberLabel.text = String.init(format: "%d", Int(round(entry.y)))
+//    }
     
     //MARK: Add in calculation to outline weather or not the coffee has a specific "flavor" profile?
     //var firstLoad = true
@@ -70,6 +73,13 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
     @IBOutlet weak var positive_Chart: RadarChartView!
     @IBOutlet weak var negative_Chart: RadarChartView!
     @IBOutlet weak var numberLabel: UILabel!
+     
+    
+    func setupMarker(){
+    positivemarker.chartView = positive_Chart
+    positive_Chart.marker = positivemarker
+    }
+
     
     
     
@@ -77,7 +87,17 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupMarker()
+        
+//
        
+        
+//        
+//        func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+//            positivemarker.lblnumber.text = "TEST"//String.init(format: "%d", Int(round(entry.y)))
+//        }
+        
+//
         // Do any additional setup after loading the view.
         
 //        if(firstLoad)
@@ -181,9 +201,10 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
 //                        yAxis.resetCustomAxisMin()
                         yAxis.labelCount = 5
                         yAxis.drawTopYLabelEntryEnabled = false
-                        yAxis.axisMaximum = 5
+                        yAxis.axisMaximum = 4
                         yAxis.axisMinimum = 0
                         yAxis.valueFormatter = YAxisFormatter()
+                        
                         
                         let BadyAxis = negative_Chart.yAxis
                         BadyAxis.labelFont = .systemFont(ofSize: 12, weight: .semibold)
@@ -237,4 +258,3 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
 //
 //
     }
-

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Coffee_Marker" customModule="Grounds_Control" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="fE4-NL-55t" id="ybJ-KX-VGD"/>
+                <outlet property="lblnumber" destination="CUC-n8-axm" id="4WJ-bT-hdJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="fE4-NL-55t" customClass="ChartMarkerView" customModule="Grounds_Control" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee_marker3x.png" translatesAutoresizingMaskIntoConstraints="NO" id="gJq-WO-TO0">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Val" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-n8-axm">
+                    <rect key="frame" x="8.5" y="7" width="33" height="30"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <color key="textColor" systemColor="systemGray6Color"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="cdG-di-Tne"/>
+            <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CUC-n8-axm" secondAttribute="trailing" constant="8" id="10m-5v-npM"/>
+                <constraint firstAttribute="bottom" secondItem="gJq-WO-TO0" secondAttribute="bottom" id="1li-Yj-Jk6"/>
+                <constraint firstItem="CUC-n8-axm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fE4-NL-55t" secondAttribute="leading" constant="8" id="4X8-GW-Ioa"/>
+                <constraint firstAttribute="trailing" secondItem="gJq-WO-TO0" secondAttribute="trailing" id="Qcf-l9-KUe"/>
+                <constraint firstItem="gJq-WO-TO0" firstAttribute="leading" secondItem="fE4-NL-55t" secondAttribute="leading" id="UIG-mh-z1j"/>
+                <constraint firstItem="CUC-n8-axm" firstAttribute="centerX" secondItem="fE4-NL-55t" secondAttribute="centerX" id="ewW-yk-myL"/>
+                <constraint firstItem="gJq-WO-TO0" firstAttribute="top" secondItem="CUC-n8-axm" secondAttribute="bottom" constant="-37" id="jgX-3x-C0I"/>
+                <constraint firstItem="gJq-WO-TO0" firstAttribute="top" secondItem="fE4-NL-55t" secondAttribute="top" id="xQ6-ob-ivF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-341" y="44"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="coffee_marker3x.png" width="300" height="400"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

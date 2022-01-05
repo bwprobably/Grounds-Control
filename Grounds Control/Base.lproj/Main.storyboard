@@ -46,7 +46,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czl-FF-hEZ" userLabel="contentview">
                                         <rect key="frame" x="0.0" y="-12" width="414" height="922"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Credit Txt" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7r7-gh-Thp">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Credit Txt" translatesAutoresizingMaskIntoConstraints="NO" id="7r7-gh-Thp">
                                                 <rect key="frame" x="34.5" y="62" width="345" height="33"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -63,7 +63,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Credit_by" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4I5-uC-qrQ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Credit_by" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4I5-uC-qrQ">
                                                 <rect key="frame" x="170" y="115" width="74" height="33"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -781,7 +781,6 @@
                                                             <color key="textColor" systemColor="labelColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="BX4-5x-BdM" id="Dbe-Qv-4m7"/>
                                                             </connections>
@@ -1093,7 +1092,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Coffee List" id="Ai4-Oh-kZh">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="5Su-VC-j8o">
+                        <barButtonItem key="rightBarButtonItem" id="5Su-VC-j8o">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jc8-0p-6ME">
                                 <rect key="frame" x="301" y="5" width="93" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
