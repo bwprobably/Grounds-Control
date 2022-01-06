@@ -79,17 +79,21 @@ Hello! Thanks for downloading and using my app. This took me by far way to long 
 
 This couldn't have been possible without:
 • Charts for iOS
-• YouTube: Coding with Chris specifically
+• YouTube:
+   • CodeWithChris
+   • Emmanuel Okwara
+   • Code With Cal
+   • tom cardy
 • Hacking with Swift
 • Professor Stack Overflow
 • My Wife
 • My Children
 • My Dog
-• Not my cat though she's a complete asshole although very fluffy.
-• Lots of coffee
+• Not my cat. She's a complete asshole although very fluffy.
+• Lots of coffee, obviously.
 
 The icon was created with Affinity Designer.
-It as well as the entire app and the education to program it were done on a 13" 2015 MacBook Pro.
+The icon as well as the entire app and the education to program it were done on a 13" 2015 MacBook Pro.
 
 Thanks: Brett Wolf
 """
@@ -101,10 +105,14 @@ Thanks: Brett Wolf
         
         let attributedbyMeText = NSMutableAttributedString.getAttributedString(fromString: salutation)
         attributedbyMeText.apply(color: .secondaryLabel, subString: salutation)
-        attributedbyMeText.applylink(value: "https://youtu.be/tneigbeGhjQ", onRange: "Seattle, WA")
+        attributedbyMeText.applylink(value: "https://youtu.be/8NUzNtqu3zQ", onRange: "Seattle, WA")
         
         let formattedCreditText = NSMutableAttributedString.getAttributedString(fromString: creditText)
         formattedCreditText.applylink(value: "https://github.com/danielgindi/Charts", onRange: "Charts for iOS")
+        formattedCreditText.applylink(value: "https://www.youtube.com/c/EmmanuelOkwara", onRange: "Emmanuel Okwara")
+        formattedCreditText.applylink(value: "https://www.youtube.com/c/CodeWithChris", onRange: "CodeWithChris")
+        formattedCreditText.applylink(value: "https://www.youtube.com/channel/UCDTKfxFIFmMnR-u_HodZGjA", onRange: "Code With Cal")
+        formattedCreditText.applylink(value: "https://www.youtube.com/channel/UCW7AGm8JSBEEew61dJIgl_A", onRange: "tom cardy")
         formattedCreditText.apply(color: .label, subString: creditText)
         
         

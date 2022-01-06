@@ -55,6 +55,7 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
     static let identifier = "CoffeeStatsView"
     
     let positivemarker = Coffee_Marker()
+    let negativeMarker = Coffee_Marker()
     
     //MARK: Added value selection -> make popup or icon to show value to user
 //    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
@@ -72,12 +73,16 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
     
     @IBOutlet weak var positive_Chart: RadarChartView!
     @IBOutlet weak var negative_Chart: RadarChartView!
-    @IBOutlet weak var numberLabel: UILabel!
      
     
     func setupMarker(){
     positivemarker.chartView = positive_Chart
     positive_Chart.marker = positivemarker
+    }
+    
+    func setupMarkerNeg(){
+        negativeMarker.chartView = negative_Chart
+        negative_Chart.marker = negativeMarker
     }
 
     
@@ -88,6 +93,7 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
         super.viewDidLoad()
         
         setupMarker()
+        setupMarkerNeg()
         
 //
        
@@ -217,7 +223,7 @@ class CoffeeStatsView: UIViewController ,ChartViewDelegate {
                         BadyAxis.valueFormatter = YAxisFormatter()
                         
                         
-                        
+                         
                     }
 
                         

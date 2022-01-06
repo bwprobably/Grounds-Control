@@ -76,7 +76,7 @@ extension coreDataMngr {
         request.sortDescriptors = [sortDescriptor]
         
         if let filter = filter {
-            let predicate = NSPredicate(format: "text contains[cd] %@", filter)
+            let predicate = NSPredicate(format: "name contains[cd] %@", filter)
             request.predicate = predicate
         }
         return (try? viewContext.fetch(request)) ?? []
@@ -93,7 +93,7 @@ extension coreDataMngr {
         request.sortDescriptors = [sortDescriptor]
         
         if let filter = filter {
-            let predicate = NSPredicate(format: "text contains[cd] %@", filter)
+            let predicate = NSPredicate(format: "name contains[cd] %@", filter)
             request.predicate = predicate
         }
         

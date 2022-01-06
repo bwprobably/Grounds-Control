@@ -385,11 +385,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D4WMHCYG9E;
+				DEVELOPMENT_TEAM = LTXXXRRBH7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grounds Control/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Grounds Control";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -400,8 +403,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Wolf-And-Assoc.Grounds-Control";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Wolf-App-Dev.Grounds-Control";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,11 +417,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D4WMHCYG9E;
+				DEVELOPMENT_TEAM = LTXXXRRBH7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Grounds Control/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Grounds Control";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -428,8 +435,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2021.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Wolf-And-Assoc.Grounds-Control";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Wolf-App-Dev.Grounds-Control";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

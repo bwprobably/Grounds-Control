@@ -142,6 +142,10 @@ class EditCoffeeController: UITableViewController {
          //recall previous selected grade
         selectedGrade(gradePicker)
         
+        self.coffeeName.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        self.Other_Notes.addCompleteButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+    
+
         //Positive Notes
         chocoLabel.text = "chocolate notes (1-5): \(Int(drink!.chocolate))"
         chocoSlider.value = drink.chocolate
@@ -181,6 +185,9 @@ class EditCoffeeController: UITableViewController {
   
 
         
+    }
+    @objc func tapDone(sender: Any) {
+        self.view.endEditing(true)
     }
     
     func roundedValue (v: Float) -> Float{
@@ -277,4 +284,5 @@ extension EditCoffeeController: UITextViewDelegate {
         drink?.otherNotes = Other_Notes.text
     }
 }
+
 
