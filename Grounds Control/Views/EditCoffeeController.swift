@@ -219,6 +219,15 @@ class EditCoffeeController: UITableViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        if drink?.title.isEmpty ?? true {
+            deleteNote()
+        } else {
+            updateNote()
+           
+        }
+    }
+    
     func selectedGrade(_ sender: UISegmentedControl){
         switch drink?.grade {
         case "Garbage":
@@ -255,7 +264,6 @@ class EditCoffeeController: UITableViewController {
         drink.underripe = underripe_slider_outlet.value
         drink.underroast = underroast_slider_outlet.value
         
-       
         
         coreDataMngr.shared.save()
     }
@@ -278,6 +286,7 @@ extension EditCoffeeController: UITextFieldDelegate {
         }
     }
 }
+
 
 extension EditCoffeeController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
