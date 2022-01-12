@@ -101,11 +101,13 @@ Thanks: Brett Wolf
         let salutation = """
             created in sunny and hot Seattle, WA
             PLDS Inc.
+            privacy policy
             """
         
         let attributedbyMeText = NSMutableAttributedString.getAttributedString(fromString: salutation)
         attributedbyMeText.apply(color: .secondaryLabel, subString: salutation)
         attributedbyMeText.applylink(value: "https://youtu.be/8NUzNtqu3zQ", onRange: "Seattle, WA")
+        attributedbyMeText.applylink(value: "https://bwprobably.github.io/GCPrivacyPolicy/", onRange: "privacy policy")
         
         let formattedCreditText = NSMutableAttributedString.getAttributedString(fromString: creditText)
         formattedCreditText.applylink(value: "https://github.com/danielgindi/Charts", onRange: "Charts for iOS")
