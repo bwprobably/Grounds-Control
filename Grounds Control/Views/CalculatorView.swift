@@ -37,14 +37,17 @@ class CalculatorViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(pickerChoices[row])
-        RatioInput.text?.removeAll()
-        suggestedRatio()
-    }
+        let emptyRatio = RatioInput.text?.isEmpty
+        if  emptyRatio == true {
+            suggestedRatio()
+        }
+//            RatioInput.text?.removeAll()
+        }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
         pickerLabel.text = pickerChoices[row]
-        pickerLabel.font = UIFont(name: "SF Pro Text Regular", size: 20)
+        //pickerLabel.font = UIFont(name: "SF Pro Text Regular", size: 20)
         pickerLabel.textAlignment = NSTextAlignment.center
         return pickerLabel
     }

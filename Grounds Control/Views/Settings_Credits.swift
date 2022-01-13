@@ -89,7 +89,7 @@ This couldn't have been possible without:
 • My Wife
 • My Children
 • My Dog
-• Not my cat. She's a complete asshole although very fluffy.
+• Not my cat. Although she is very fluffy.
 • Lots of coffee, obviously.
 
 The icon was created with Affinity Designer.
