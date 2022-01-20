@@ -41,10 +41,14 @@ class CoffeeListViewController: UIViewController {
         refreshCountLbl()
     }
     
+    func setupScopeFilterREsults(filter: String? = nil){
+        //TODO: Scope Filter
+    }
     
     
     private func configureSearchBar() {
         navigationItem.searchController = searchController
+        searchController.searchBar.scopeButtonTitles = ["All","Garbage", "Just \"OK\"","Outstanding"]
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.delegate = self
@@ -158,6 +162,10 @@ extension CoffeeListViewController: UISearchControllerDelegate, UISearchBarDeleg
         search(searchText)
     }
     
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        print("new scope index is \(selectedScope)")
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search("")
     }
@@ -174,6 +182,13 @@ extension CoffeeListViewController: UISearchControllerDelegate, UISearchBarDeleg
         }
         
         tableView.reloadData()
+    }
+    
+    //TODO: Fix Scope Filter
+    func scope(_ query: String) {
+        if query.count >= 0 {
+            
+        }
     }
 }
 
